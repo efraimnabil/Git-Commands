@@ -52,3 +52,10 @@ Open your terminal and run these commands
 
 **git pull :** is used to fetch the newest updates from a remote repository.
 
+**git remote :** Lists remote repos.
+  
+**git remote show <name> :** Describes a single remote repo.
+  
+**git remote update :** Fetches the most up-to-date objects.
+  
+**git fetch :** Downloads specific objects.
