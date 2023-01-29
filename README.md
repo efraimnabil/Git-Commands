@@ -9,53 +9,82 @@ Open your terminal and run these commands
   sudo apt upgrade
   sudo apt install git
 ```
+
+### Configure Git
+
+```bash
+  git config --global user.name "Your Name"
+  git config --global user.email "Your Email"
+```
+
+### clone a repository
+
+```bash
+  git clone
+  cd "repo-name"
+```
+
 ### Git commands cheat sheet
-**git init :** creates a new Git repository.
+`git init` : initialize a local git repository.
 
-**git add :** add those changes to the staging area.
+`git add` : add files to the staging area.
 
-**git commit :** move changes from the staging area to a commit.
+`git commit` : commit changes to head (but not yet to the remote repository).
 
-**git commit -a :** commit and stages files automatically.
+`git commit -a` : commit any files you’ve changed since then.
 
-**git log :** Show commit logs.
+`git commit -m "commit message"` : commit with a message.
 
-**git diff :** see the changes that are not staged.
+`git log` : show the commit history for the currently active branch.
 
-**git diff --staged :** see the changes that are staged.
+`git log --follow [file]` : show the commits that changed file, even across renames.
 
-**git checkout :** is used to switch branches.
+`git diff` : diff of what is changed but not staged.
 
-**git reset :** is used to undo local changes to the state of a Git repo.
+`git diff --staged` : diff of what is staged but not yet commited.
 
-**git commit --amend :** Amending the most recent commit message.
+`it diff [first branch] [second branch]` : diff of what is in branch A that is not in branch B.
 
-**git revert :** rolls back to a previous commit.
+`git show [commit]` : show all the changes made in a commit, even across files and renames.
 
-**git branch <name> :** Creates a new branch.
+`git rm [file]` : remove a file from the working tree and from the index.
 
-**git branch -d <branch> :** delete branch.
+`git mv [file-original] [file-renamed]` : change an existing file path and stage the move.
 
-**git branch -D <branch> :** Forcibly deletes the branch, Shortcut for --delete --force.
+`git checkout -- [file]` : discard changes to a file.
 
-**git checkout <branch> :** Switches to a branch.
+`git reset [file]` : unstage a file while retaining the changes in working directory.
 
-**git checkout -b <branch> :** Creates a new branch and switches to it.
+`git reset [commit]` : reset your HEAD pointer to a previous commit and discard all changes since then.
 
-**git merge <branch> :** Merge joins branches together. 
+`git branch` : list your branches. a * will appear next to the currently active branch.
 
-**git log --graph --oneline :** This shows a summarized view of the commit history for a repo.
+`git branch [branch-name]` : create a new branch at the current commit.
 
-**git clone URL :** is used to clone a remote repository into a local workspace.
+`git branch -d [branch-name]` : delete the specified branch.
 
-**git push :** is used to push commits from your local repo to a remote repo.
+`git push origin [branch-name]` : send the branch to your remote repository.
 
-**git pull :** is used to fetch the newest updates from a remote repository.
+`git push -u origin [branch]` : push changes to remote repository (and remember the branch).
 
-**git remote :** Lists remote repos.
-  
-**git remote show <name> :** Describes a single remote repo.
-  
-**git remote update :** Fetches the most up-to-date objects.
-  
-**git fetch :** Downloads specific objects.
+`git push` : send changes to the master branch of your remote repository.
+
+`git push origin --delete [branch-name]` : delete a branch on your remote repository.
+
+`git pull` : update local repository to the newest commit.
+
+`git clone [url]` : clone a repository that already exists on GitHub, including all of the files, branches, and commits.
+
+`git remote add origin [url]` : add a remote repository that is not on GitHub.
+
+`git remote -v` : show all remote repositories.
+
+`git fetch` : fetch down all the branches from that Git remote.
+
+`git merge [branch]` : merge a different branch into your active branch to bring it up to date.
+
+`git rebase [branch]` : apply any commits of current branch ahead of specified one.
+
+`git show [tag]` : see information about a tag.
+
+`git pull` : fetch and merge any commits from the tracking remote branch.
